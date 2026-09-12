@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ựa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+<header>
+  <div class="badge">✨ AI WRITER</div>
+  <h1>Thành siuuu vl</h1>
+  <p>Biến câu nói bình thường thành những câu chữ sâu sắc và hoa mỹ hơn.</p>
+</header>
+
+<section class="card">
+  <label for="input">Câu nói của bạn</label>
+  <textarea id="input" maxlength="3000" placeholder="Ví dụ: Đừng quan tâm người khác nghĩ gì về mình..."></textarea>
+
+  <div class="grid">
+    <div><label for="topic">Chủ đề</label>
+      <select id="topic">
+        <option>Đạo lý / cuộc sống</option><option>Tình yêu</option>
+        <option>Tâm trạng</option><option>Động lực</option><option>Trưởng thành</option>
+        <option>Tình bạn</option><option>Gia đình</option><option>Học tập</option>
+        <option>Sự nghiệp</option><option>Tiệc tùng / cuộc vui</option>
+        <option>Triết lý</option><option>Hài hước</option><option>Tự do</option>
+      </select>
+    </div>
+    <div><label for="style">Phong cách</label>
+      <select id="style">
+        <option>Sâu sắc</option><option>Văn học</option><option>Ngắn gọn, chất</option>
+        <option>Chữa lành</option><option>Ngầu</option><option>Thơ</option>
+      </select>
+    </div>
+    <div><label for="level">Mức độ hoa mỹ</label>
+      <select id="level">
+        <option>Bình thường</option><option>Hay</option><option selected>Hoa mỹ</option>
+        <option>Rất hoa mỹ</option><option>Cực kỳ văn học</option>
+      </select>
+    </div>
+    <div><label for="count">Số kết quả</label>
+      <select id="count"><option>3</option><option>4</option><option>5</option></select>
+    </div>
+  </div>
+
+  <button id="go">✨ Tạo câu nói</button>
+  <p id="status"></p>
+</section>
+
+<section id="results"></section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
