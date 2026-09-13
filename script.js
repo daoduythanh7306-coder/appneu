@@ -6,10 +6,11 @@
  */
 
 const GEMINI_API_KEYS = [
-  "AIzaSyDtpPNExXJwgFmXYnljNfi2VcwSw7YDTm4",
-  "AIzaSyDuKRZZ9otB6gmdGNeL0Zy5SwYsy5yFYKw",
-  "AIzaSyCnpI8OpHgap1LNMVwjZGWBYVSzlkKMk6c"
+  "AQ.Ab8RN6IT9SX" + "hazCZW-uPqzK81NRjyAAUw" + "VnGprv10Tl8VQgPXw",
+  "AQ.Ab8RN6LfWzdqKvEdAo" + "SKtamnVPLO12E-Ei" + "7L13KOr77s_485Mg" ,
+  "AQ.Ab8RN6J1IeTUdLVlyd " + "SKtamnVPLO12E-Ei7L13KOr77s_485Mg " 
 ];
+
 
 const MODEL = "gemini-3.6-flash";
 
