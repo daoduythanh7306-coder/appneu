@@ -17,7 +17,7 @@ let currentKey = 0;
 // app sẽ thử model tiếp theo trên cùng API key.
 const MODELS = [
   "gemini-3.5-flash",
-  "gemini-3.8-flash"
+  "gemini-3.6-flash"
 ];
 
 function validKeys() {
@@ -27,27 +27,26 @@ function validKeys() {
 }
 
 async function callGemini(apiKey, model, prompt) {
-  const url =
-    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  
+const url =
+  `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": apiKey
-    },
-    body: JSON.stringify({
-      contents: [
-        {
-          parts: [{ text: prompt }]
-        }
-      ],
-      generationConfig: {
-        temperature: 0.9,
-        responseMimeType: "application/json"
-      }
-    })
-  });
+const response = await fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-goog-api-key": apiKey
+  },
+  body: JSON.stringify({
+    contents: [{
+      parts: [{ text: prompt }]
+    }],
+    generationConfig: {
+      temperature: 0.9,
+      responseMimeType: "application/json"
+    }
+  })
+});
 
   const data = await response.json();
 
