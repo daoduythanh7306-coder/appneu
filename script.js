@@ -16,7 +16,6 @@ let currentKey = 0;
 // Danh sách model dự phòng. Nếu model đầu không dùng được,
 // app sẽ thử model tiếp theo trên cùng API key.
 const MODELS = [
-  "gemini-3.5-flash",
   "gemini-3.6-flash"
 ];
 
