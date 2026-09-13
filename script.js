@@ -16,8 +16,8 @@ let currentKey = 0;
 // Danh sách model dự phòng. Nếu model đầu không dùng được,
 // app sẽ thử model tiếp theo trên cùng API key.
 const MODELS = [
-  "gemini-2.5-flash",
-  "gemini-2.0-flash"
+  "gemini-3.5-flash",
+  "gemini-3.8-flash"
 ];
 
 function validKeys() {
@@ -28,13 +28,20 @@ function validKeys() {
 
 async function callGemini(apiKey, model, prompt) {
   const url =
-    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
   const response = await fetch(url, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey
+    },
     body: JSON.stringify({
-      contents: [{parts: [{text: prompt}]}],
+      contents: [
+        {
+          parts: [{ text: prompt }]
+        }
+      ],
       generationConfig: {
         temperature: 0.9,
         responseMimeType: "application/json"
@@ -43,18 +50,20 @@ async function callGemini(apiKey, model, prompt) {
   });
 
   const data = await response.json();
+
   if (!response.ok) {
     const msg = data?.error?.message || `HTTP ${response.status}`;
-    const error = new Error(msg);
-    error.status = response.status;
-    throw error;
+    throw new Error(msg);
   }
 
   const text = data?.candidates?.[0]?.content?.parts
     ?.map(p => p.text || "")
     .join("") || "";
 
-  if (!text) throw new Error("Gemini không trả về nội dung.");
+  if (!text) {
+    throw new Error("Gemini không trả về nội dung.");
+  }
+
   return JSON.parse(text);
 }
 
