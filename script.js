@@ -7,11 +7,11 @@
 
 const GEMINI_API_KEYS = [
   "AQ.Ab8RN6IT9SX" + "hazCZW-uPqzK81NRjyAAUw" + "VnGprv10Tl8VQgPXw",
-  "AQ.Ab8RN6LfWzdqKvEdAo" + "SKtamnVPLO12E-Ei" + "7L13KOr77s_485Mg" ,
+  "AQ.Ab8RN6LadPyWynB5dmCOrAkM" + "fHrBRe3yTJiP7Uql-d5QblAnOQ" ,
   "AQ.Ab8RN6J1IeTUdLVlyd " + "SKtamnVPLO12E-Ei7L13KOr77s_485Mg " 
 ];
 
-
+AQ.Ab8RN6LadPyWynB5dmCOrAkM    fHrBRe3yTJiP7Uql-d5QblAnOQ
 const MODEL = "gemini-3.6-flash";
 
 let currentKey = 0;
